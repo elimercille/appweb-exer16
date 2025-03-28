@@ -4,106 +4,49 @@ Fait par Elisabeth Mercille
 
 ## Le code
 
-Le code est-il lisible, clair ou est-il trop complexe ?
+**Le code est-il lisible, clair ou est-il trop complexe ?**
 
-**Input**
+Le code est bien lisible selon moi, je comprends bien ce que l'élève voulait accomplir dans tous les composents. Je suggèrerais peut-être l'utilisation de scripts pour certaines choses réutilisables, par exemple définir l'interface d'un produit.
 
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
+**Le code est-il conforme aux [bonnes pratiques de programmation](https://appweb.progwmj.ca/documentations/bonnes-pratiques/code) ?**
 
-Le code est-il conforme aux [bonnes pratiques de programmation](https://appweb.progwmj.ca/documentations/bonnes-pratiques/code) ?
+Dans son projet, l'élève a un fichier vide qui aurait dû être supprimé puisqu'il est inutile. Le code est bien découpé avec des composents pour chaque fonctionnalités du projet.
 
-**Output**
+**Le code est-il conforme aux [normes et standards de programmation](https://appweb.progwmj.ca/documentations/normes) ?**
+
+Les noms des composants ne contiennent pas le mot "Component" ou "Composant" dans leurs noms, ce qui ne respecte pas les standards de la programmation avec Vue.js. De plus, le camelCase a bien été utilisé pour le nommage de variables, fonctions et instances. Par contre, j'ai trouvé dans un composant une classe css non utilisée.
 
 ```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-Le code est-il conforme aux [bonnes pratiques de programmation](https://appweb.progwmj.ca/documentations/bonnes-pratiques/code)
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+ <form
+    @submit.prevent="ajouterProduit"
+    novalidate
+    class="needs-validation was-validated"
+  >
 ```
 
 ## Autres
 
-Est-ce que [la sécurité](https://appweb.progwmj.ca/documentations/bonnes-pratiques/securite) a été considérée (données sensibles, connexion HTTPS, etc.) ?
+**Est-ce qu'un algorithme peut être amélioré ?**
 
-**Input**
-
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-Le code est-il optimisé en termes de performance et de consommation de ressources ?
-
-**Output**
+Je trouve les algorithmes tous bien implémentés, ils ont tous un but précis.
 
 ```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
+const modifierProduit = ({
+  index,
+  produit,
+}: {
+  index: number;
+  produit: { nom: string; description: string; prix: number; quantite: number };
+}) => {
+  produits.value[index] = produit;
+};
 
-Est-ce qu'un algorithme peut être amélioré ?
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-Le code est-il testé et couvert par des tests unitaires et d’intégration ?
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
+const ajouterProduit = (produit: {
+  nom: string;
+  description: string;
+  prix: number;
+  quantite: number;
+}) => {
+  produits.value.push(produit);
+};
 ```
